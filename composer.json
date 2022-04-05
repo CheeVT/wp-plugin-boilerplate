@@ -1,0 +1,15 @@
+{
+    "name": "cheevt/wp-plugin-boilerplate",
+    "authors": [
+        {
+            "name": "cheevt",
+            "email": "cheevt@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CheeVT\\": "src/"
+        }
+    },
+    "require": {}
+}
