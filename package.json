@@ -1,0 +1,47 @@
+{
+  "name": "cheevt-wp-plugin-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "cross-env BROWSERSLIST_ENV=development gulp dev",
+    "watch": "cross-env BROWSERSLIST_ENV=development gulp",
+    "prod": "cross-env BROWSERSLIST_ENV=production gulp prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/register": "^7.15.3",
+    "autoprefixer": "^10.3.7",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.43.3",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "babel-plugin-loop-optimizer": "^1.4.1",
+    "core-js": "^3.18.3",
+    "cross-env": "^7.0.3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env"
+    ]
+  }
+}
