@@ -8,19 +8,30 @@ class Plugin
     {
         $this->__file__ = $__file__;
         $this->__dir__ = $__dir__;
+        AjaxController::init();
+        
+        add_action('plugins_loaded', [$this, 'initScripts']);
+    }
 
+    public function initScripts()
+    {
         add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueueStyles']);
     }
 
     public function enqueueScripts()
     {
         $jsFileUrl = plugin_dir_url($this->__file__) . 'dist/plugin.js';
-        $cssFileUrl = plugin_dir_url($this->__file__) . 'dist/plugin.css';
 
-        wp_enqueue_script('cheevt-plugin-boilerplate-js', $jsFileUrl, [], false, true);
+        wp_enqueue_script('cheevt-plugin-boilerplate-js', $jsFileUrl, ['jquery'], false, true);
         wp_localize_script('cheevt-plugin-boilerplate-js', 'cheevt_object', [
             'ajax_url' => admin_url('admin-ajax.php'),
-        ]);
+        ]);        
+    }
+
+    public function enqueueStyles()
+    {
+        $cssFileUrl = plugin_dir_url($this->__file__) . 'dist/plugin.css';
 
         wp_register_style('cheevt-plugin-boilerplate-css', $cssFileUrl, [], false);
         wp_enqueue_style('cheevt-plugin-boilerplate-css');
