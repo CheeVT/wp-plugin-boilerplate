@@ -2,13 +2,15 @@
 
 namespace CheeVT;
 
+use CheeVT\Core\Ajax;
+
 class Plugin
 {
     public function __construct($__file__, $__dir__)
     {
         $this->__file__ = $__file__;
         $this->__dir__ = $__dir__;
-        AjaxController::init();
+        Ajax::init();
         
         add_action('plugins_loaded', [$this, 'initScripts']);
     }

@@ -2,7 +2,7 @@
 
 namespace CheeVT\Ajax;
 
-class Example
+class ExampleAjax
 {
     public function __construct()
     {
