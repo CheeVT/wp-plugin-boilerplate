@@ -3,6 +3,7 @@
 namespace CheeVT;
 
 use CheeVT\Core\Ajax;
+use CheeVT\Core\CPT;
 
 class Plugin
 {
@@ -11,6 +12,7 @@ class Plugin
         $this->__file__ = $__file__;
         $this->__dir__ = $__dir__;
         Ajax::init();
+        CPT::init();
         
         add_action('plugins_loaded', [$this, 'initScripts']);
     }

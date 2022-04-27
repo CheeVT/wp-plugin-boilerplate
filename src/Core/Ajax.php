@@ -4,7 +4,7 @@ namespace CheeVT\Core;
 
 use HaydenPierce\ClassFinder\ClassFinder;
 
-class Ajax
+abstract class Ajax
 {
     const AJAX_NAMESPACE = 'CheeVT\Ajax';
 
