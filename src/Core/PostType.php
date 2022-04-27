@@ -4,9 +4,9 @@ namespace CheeVT\Core;
 
 use HaydenPierce\ClassFinder\ClassFinder;
 
-abstract class CPT
+abstract class PostType
 {
-    const AJAX_NAMESPACE = 'CheeVT\PostTypes';
+    const POST_TYPE_NAMESPACE = 'CheeVT\PostTypes';
 
     protected $postTypeData = [];
 
@@ -17,7 +17,7 @@ abstract class CPT
 
     public static function init()
     {
-        $customPostTypeClasses = ClassFinder::getClassesInNamespace(self::AJAX_NAMESPACE);
+        $customPostTypeClasses = ClassFinder::getClassesInNamespace(self::POST_TYPE_NAMESPACE);
 
         array_map(function($class){
             new $class;

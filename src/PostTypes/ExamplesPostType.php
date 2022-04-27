@@ -2,9 +2,9 @@
 
 namespace CheeVT\PostTypes;
 
-use CheeVT\Core\CPT;
+use CheeVT\Core\PostType;
 
-class ExamplesPostType extends CPT
+class ExamplesPostType extends PostType
 {
     protected $postTypeData = [];
 

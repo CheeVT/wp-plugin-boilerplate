@@ -3,7 +3,8 @@
 namespace CheeVT;
 
 use CheeVT\Core\Ajax;
-use CheeVT\Core\CPT;
+use CheeVT\Core\PostType;
+use CheeVT\Core\Taxonomy;
 
 class Plugin
 {
@@ -12,7 +13,8 @@ class Plugin
         $this->__file__ = $__file__;
         $this->__dir__ = $__dir__;
         Ajax::init();
-        CPT::init();
+        PostType::init();
+        Taxonomy::init();
         
         add_action('plugins_loaded', [$this, 'initScripts']);
     }
