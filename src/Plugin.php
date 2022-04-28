@@ -5,6 +5,8 @@ namespace CheeVT;
 use CheeVT\Core\Ajax;
 use CheeVT\Core\PostType;
 use CheeVT\Core\Taxonomy;
+use CheeVT\Controllers\MenuPageController;
+use CheeVT\Controllers\SubMenuPageController;
 
 class Plugin
 {
@@ -15,6 +17,8 @@ class Plugin
         Ajax::init();
         PostType::init();
         Taxonomy::init();
+        new MenuPageController($__dir__);
+        new SubMenuPageController($__dir__);
         
         add_action('plugins_loaded', [$this, 'initScripts']);
     }
