@@ -19,6 +19,8 @@ class Plugin
         Taxonomy::init();
         new MenuPageController($__dir__);
         new SubMenuPageController($__dir__);
+
+        new \CheeVT\Shortcodes\ExampleShortcode;
         
         add_action('plugins_loaded', [$this, 'initScripts']);
     }
