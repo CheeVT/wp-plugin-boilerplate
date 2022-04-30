@@ -4,6 +4,7 @@ namespace CheeVT\Controllers;
 
 use CheeVT\Core\Controller;
 use CheeVT\Core\MenuPage;
+use CheeVT\SettingsAPI\ExampleSettingsAPI;
 
 class MenuPageController extends Controller
 {
@@ -22,7 +23,9 @@ class MenuPageController extends Controller
             'position' => 99,
             'function' => '',
         ]);
-    }
+
+        $this->settiingsAPI = new ExampleSettingsAPI();
+    }   
 
     public function index()
     {
