@@ -14,6 +14,7 @@ class Plugin
     {
         $this->__file__ = $__file__;
         $this->__dir__ = $__dir__;
+        
         Ajax::init();
         PostType::init();
         Taxonomy::init();
@@ -21,8 +22,15 @@ class Plugin
         new SubMenuPageController($__dir__);
 
         new \CheeVT\Shortcodes\ExampleShortcode;
+        (new \CheeVT\Tables\ExampleTable)->create();
         
+        register_activation_hook($this->__file__, [$this, 'activate']);
         add_action('plugins_loaded', [$this, 'initScripts']);
+    }
+
+    public function activate()
+    {
+        
     }
 
     public function initScripts()
