@@ -2,15 +2,13 @@
 
 namespace CheeVT\Ajax;
 
-class ExampleAjax
-{
-    public function __construct()
-    {
-        add_action('wp_ajax_example_func', [$this, 'exampleFunction']);
-        add_action('wp_ajax_nopriv_example_func', [$this, 'exampleFunction']);        
-    }
+use CheeVT\Core\Abstracts\Ajax;
 
-    public function exampleFunction()
+class ExampleAjax extends Ajax
+{
+    protected $action = 'example_func';
+
+    public function defineAjax()
     {
         header('Content-type: application/json');
         print json_encode([

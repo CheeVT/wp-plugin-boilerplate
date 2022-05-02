@@ -12,11 +12,11 @@ class Plugin
         $this->__dir__ = $__dir__;
 
         Loader::init([
-            'CheeVT\Ajax',
-            'CheeVT\Shortcodes',
-            'CheeVT\PostTypes',
-            'CheeVT\Taxonomies',
-            'CheeVT\AdminPages'
+            \CheeVT\Ajax::class,
+            \CheeVT\Shortcodes::class,
+            \CheeVT\PostTypes::class,
+            \CheeVT\Taxonomies::class,
+            \CheeVT\AdminPages::class,
         ], $__dir__);     
 
         (new \CheeVT\Tables\ExampleTable)->create();
