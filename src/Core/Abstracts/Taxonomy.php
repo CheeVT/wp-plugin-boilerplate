@@ -1,27 +1,16 @@
 <?php
 
-namespace CheeVT\Core;
+namespace CheeVT\Core\Abstracts;
 
 use HaydenPierce\ClassFinder\ClassFinder;
 
 abstract class Taxonomy
 {
-    const TAXONOMIES_NAMESPACE = 'CheeVT\Taxonomies';
-
     protected $taxonomyData = [];
 
     public function __construct()
     {
         add_action('init', [$this, 'initCustomTaxonomy']);
-    }
-
-    public static function init()
-    {
-        $taxonomyClasses = ClassFinder::getClassesInNamespace(self::TAXONOMIES_NAMESPACE);
-
-        array_map(function($class){
-            new $class;
-        }, $taxonomyClasses);
     }
 
     /**

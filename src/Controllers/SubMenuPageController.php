@@ -2,7 +2,7 @@
 
 namespace CheeVT\Controllers;
 
-use CheeVT\Core\Controller;
+use CheeVT\Core\Abstracts\Controller;
 use CheeVT\Core\SubMenuPage;
 
 class SubMenuPageController extends Controller

@@ -2,7 +2,7 @@
 
 namespace CheeVT\Shortcodes;
 
-use CheeVT\Core\Shortcode;
+use CheeVT\Core\Abstracts\Shortcode;
 
 class ExampleShortcode extends Shortcode
 {

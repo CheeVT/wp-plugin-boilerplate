@@ -2,7 +2,7 @@
 
 namespace CheeVT\PostTypes;
 
-use CheeVT\Core\PostType;
+use CheeVT\Core\Abstracts\PostType;
 
 class ExamplesPostType extends PostType
 {

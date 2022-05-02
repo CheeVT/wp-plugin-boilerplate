@@ -2,7 +2,7 @@
 
 namespace CheeVT\Tables;
 
-use CheeVT\Core\DatabaseTable;
+use CheeVT\Core\Abstracts\DatabaseTable;
 
 class ExampleTable extends DatabaseTable
 {

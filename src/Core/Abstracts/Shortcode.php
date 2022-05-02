@@ -1,6 +1,6 @@
 <?php
 
-namespace CheeVT\Core;
+namespace CheeVT\Core\Abstracts;
 
 abstract class Shortcode
 {

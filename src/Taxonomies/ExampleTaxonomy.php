@@ -2,7 +2,7 @@
 
 namespace CheeVT\Taxonomies;
 
-use CheeVT\Core\Taxonomy;
+use CheeVT\Core\Abstracts\Taxonomy;
 
 class ExampleTaxonomy extends Taxonomy
 {

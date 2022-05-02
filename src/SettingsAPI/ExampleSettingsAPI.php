@@ -2,7 +2,7 @@
 
 namespace CheeVT\SettingsAPI;
 
-use CheeVT\Core\SettingsAPI;
+use CheeVT\Core\Abstracts\SettingsAPI;
 
 class ExampleSettingsAPI extends SettingsAPI
 {

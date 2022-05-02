@@ -2,7 +2,7 @@
 
 namespace CheeVT\Controllers;
 
-use CheeVT\Core\Controller;
+use CheeVT\Core\Abstracts\Controller;
 use CheeVT\Core\MenuPage;
 use CheeVT\SettingsAPI\ExampleSettingsAPI;
 

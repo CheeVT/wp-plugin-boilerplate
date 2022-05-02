@@ -1,27 +1,16 @@
 <?php
 
-namespace CheeVT\Core;
+namespace CheeVT\Core\Abstracts;
 
 use HaydenPierce\ClassFinder\ClassFinder;
 
 abstract class PostType
 {
-    const POST_TYPE_NAMESPACE = 'CheeVT\PostTypes';
-
     protected $postTypeData = [];
 
     public function __construct()
     {
         add_action('init', [$this, 'initCustomPostType']);
-    }
-
-    public static function init()
-    {
-        $customPostTypeClasses = ClassFinder::getClassesInNamespace(self::POST_TYPE_NAMESPACE);
-
-        array_map(function($class){
-            new $class;
-        }, $customPostTypeClasses);
     }
 
     /**

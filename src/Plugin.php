@@ -2,9 +2,7 @@
 
 namespace CheeVT;
 
-use CheeVT\Core\Ajax;
-use CheeVT\Core\PostType;
-use CheeVT\Core\Taxonomy;
+use CheeVT\Core\Loader;
 use CheeVT\Controllers\MenuPageController;
 use CheeVT\Controllers\SubMenuPageController;
 
@@ -14,14 +12,19 @@ class Plugin
     {
         $this->__file__ = $__file__;
         $this->__dir__ = $__dir__;
+
+        Loader::init([
+            'CheeVT\Ajax',
+            'CheeVT\Shortcodes',
+            'CheeVT\PostTypes',
+            'CheeVT\Taxonomies',
+        ]);
         
-        Ajax::init();
-        PostType::init();
-        Taxonomy::init();
         new MenuPageController($__dir__);
         new SubMenuPageController($__dir__);
+        
 
-        new \CheeVT\Shortcodes\ExampleShortcode;
+        //new \CheeVT\Shortcodes\ExampleShortcode;
         (new \CheeVT\Tables\ExampleTable)->create();
         
         register_activation_hook($this->__file__, [$this, 'activate']);
