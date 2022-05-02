@@ -3,8 +3,6 @@
 namespace CheeVT;
 
 use CheeVT\Core\Loader;
-use CheeVT\Controllers\MenuPageController;
-use CheeVT\Controllers\SubMenuPageController;
 
 class Plugin
 {
@@ -18,13 +16,9 @@ class Plugin
             'CheeVT\Shortcodes',
             'CheeVT\PostTypes',
             'CheeVT\Taxonomies',
-        ]);
-        
-        new MenuPageController($__dir__);
-        new SubMenuPageController($__dir__);
-        
+            'CheeVT\AdminPages'
+        ], $__dir__);     
 
-        //new \CheeVT\Shortcodes\ExampleShortcode;
         (new \CheeVT\Tables\ExampleTable)->create();
         
         register_activation_hook($this->__file__, [$this, 'activate']);
