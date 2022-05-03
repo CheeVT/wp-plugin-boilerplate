@@ -26,7 +26,8 @@ abstract class PostType
 
         register_post_type($this->postTypeData['post_type'], [
             'label' => __($this->postTypeData['label'], $this->postTypeData['textdomain']),
-		    'description' => __($this->postTypeData['description'], $this->postTypeData['textdomain']),
+		    'description' => isset($this->postTypeData['description']) ? 
+                        __($this->postTypeData['description'], $this->postTypeData['textdomain']) : '',
             'labels' => [
                 'name' => __($this->postTypeData['name'], $this->postTypeData['textdomain']),
                 'singular_name' => __($this->postTypeData['singular_name'], $this->postTypeData['textdomain']),

@@ -17,7 +17,8 @@ class ExampleTaxonomy extends Taxonomy
             'singular_name' => 'Type',
             'rewrite' => [
                 'slug' => 'types_example',
-            ]
+            ],
+            'textdomain' => 'lng_cheevt_boilerplate'
         ];
         parent::__construct();
     }
