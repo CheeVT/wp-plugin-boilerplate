@@ -3,6 +3,7 @@
 namespace CheeVT;
 
 use CheeVT\Core\Loader;
+use CheeVT\Core\DBSchema;
 
 class Plugin
 {
@@ -17,17 +18,16 @@ class Plugin
             \CheeVT\PostTypes::class,
             \CheeVT\Taxonomies::class,
             \CheeVT\AdminPages::class,
-        ], $__dir__);     
-
-        (new \CheeVT\Tables\ExampleTable)->create();
+        ], $__dir__);        
         
         register_activation_hook($this->__file__, [$this, 'activate']);
         add_action('plugins_loaded', [$this, 'initScripts']);
+        register_uninstall_hook($this->__file__, [static::class, 'uninstall']);
     }
 
     public function activate()
     {
-        
+        DBSchema::create([\CheeVT\Tables::class]);
     }
 
     public function initScripts()
@@ -43,7 +43,7 @@ class Plugin
         wp_enqueue_script('cheevt-plugin-boilerplate-js', $jsFileUrl, ['jquery'], false, true);
         wp_localize_script('cheevt-plugin-boilerplate-js', 'cheevt_object', [
             'ajax_url' => admin_url('admin-ajax.php'),
-        ]);        
+        ]);
     }
 
     public function enqueueStyles()
@@ -52,5 +52,10 @@ class Plugin
 
         wp_register_style('cheevt-plugin-boilerplate-css', $cssFileUrl, [], false);
         wp_enqueue_style('cheevt-plugin-boilerplate-css');
+    }
+
+    public static function uninstall()
+    {
+        DBSchema::drop([\CheeVT\Tables::class]);
     }
 }

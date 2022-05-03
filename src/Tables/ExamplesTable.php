@@ -4,7 +4,7 @@ namespace CheeVT\Tables;
 
 use CheeVT\Core\Abstracts\DatabaseTable;
 
-class ExampleTable extends DatabaseTable
+class ExamplesTable extends DatabaseTable
 {
     protected $tableName = 'examples';
 
