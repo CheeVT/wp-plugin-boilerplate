@@ -14,6 +14,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) { le
 
 var form = document.getElementById('contact-form');
 var sendBtn = form.querySelector('button');
+var msgDiv = form.querySelector('.contact-form__msg');
 
 var contactFormAjax = function contactFormAjax() {
   sendBtn.addEventListener('click', function () {
@@ -32,7 +33,6 @@ var contactFormAjax = function contactFormAjax() {
         if (textStatus == 'success') {
           console.log('success', response);
           sendBtn.innerText = 'Send';
-          var msgDiv = form.querySelector('.contact-form__msg');
           msgDiv.classList.remove('contact-form__msg--hidden');
           setTimeout(function () {
             msgDiv.classList.add('contact-form__msg--hidden');
@@ -42,6 +42,12 @@ var contactFormAjax = function contactFormAjax() {
         }
       },
       error: function error(jqXHR, textStatus, errorThrown) {
+        sendBtn.innerText = 'Send';
+        msgDiv.classList.remove('contact-form__msg--hidden');
+        setTimeout(function () {
+          msgDiv.classList.add('contact-form__msg--hidden');
+        }, 3000);
+        msgDiv.innerHTML = "<p>".concat(jqXHR.responseJSON.message, "</p>");
         console.log('error', jqXHR);
       }
     });

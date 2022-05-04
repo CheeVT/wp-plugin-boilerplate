@@ -12,6 +12,7 @@
         }
     },
     "require": {
-        "haydenpierce/class-finder": "^0.4.3"
+        "haydenpierce/class-finder": "^0.4.3",
+        "particle/validator": "^2.3"
     }
 }

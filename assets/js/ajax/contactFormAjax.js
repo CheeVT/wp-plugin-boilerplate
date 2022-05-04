@@ -1,5 +1,6 @@
 const form = document.getElementById('contact-form');
 const sendBtn = form.querySelector('button');
+const msgDiv = form.querySelector('.contact-form__msg');
 
 const contactFormAjax = () => {
     sendBtn.addEventListener('click', () => {        
@@ -20,7 +21,7 @@ const contactFormAjax = () => {
                 if (textStatus == 'success') {
                     console.log('success', response);
                     sendBtn.innerText = 'Send';
-                    const msgDiv = form.querySelector('.contact-form__msg');
+                    
                     msgDiv.classList.remove('contact-form__msg--hidden');
                     setTimeout(() => {
                         msgDiv.classList.add('contact-form__msg--hidden');
@@ -31,6 +32,13 @@ const contactFormAjax = () => {
     
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                sendBtn.innerText = 'Send';
+
+                msgDiv.classList.remove('contact-form__msg--hidden');
+                    setTimeout(() => {
+                        msgDiv.classList.add('contact-form__msg--hidden');
+                    }, 3000);
+                    msgDiv.innerHTML = `<p>${jqXHR.responseJSON.message}</p>`;
                 console.log('error', jqXHR);
             }
         });
