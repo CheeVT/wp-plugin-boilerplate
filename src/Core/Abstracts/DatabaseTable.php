@@ -29,7 +29,7 @@ abstract class DatabaseTable
 	    );
     }
 
-    protected function getName()
+    public function getName()
     {
         return $this->wpdb->prefix . $this->tableName;
     }
