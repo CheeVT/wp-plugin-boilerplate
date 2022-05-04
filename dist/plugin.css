@@ -1,3 +1,45 @@
+.cheevt-contact-container {
+  display: block;
+  max-width: 400px !important;
+}
+.cheevt-contact-container .contact-form__field {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+.cheevt-contact-container .contact-form__input {
+  font-size: 16px;
+  padding: 4px;
+}
+.cheevt-contact-container .contact-form__textarea {
+  font-size: 16px;
+  padding: 4px;
+}
+.cheevt-contact-container .contact-form__btn {
+  padding: 8px 0;
+}
+.cheevt-contact-container .contact-form__btn button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.cheevt-contact-container .contact-form__msg {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px 20px;
+  font-size: 14px;
+  text-align: center;
+}
+.cheevt-contact-container .contact-form__msg--hidden {
+  display: none;
+}
+
 body {
   background-color: red !important;
 }
