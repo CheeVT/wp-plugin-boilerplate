@@ -20,6 +20,19 @@ class ContactFormAdminPage extends AdminPage
         $this->controller = new ContactFormController($__dir__);
     }
 
+    public function handleAction()
+    {
+        $id = $this->controller->getId();
+        if($this->controller->getAction() == 'delete' && isset($id)) {
+            $this->controller->delete($id);
+        } 
+        
+        $ids = $this->controller->getIds();
+        if($this->controller->getAction() == 'bulk-delete' && isset($ids)) {
+            $this->controller->bulkDelete($ids);
+        }        
+    } 
+
     public function handleView()
     {
         if($this->controller->getAction() == 'show') {

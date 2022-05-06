@@ -20,6 +20,11 @@ class SettingsAdminPage extends AdminPage
         $this->controller = new MenuPageController($__dir__);
     }
 
+    public function handleAction()
+    {
+        
+    }
+
     public function handleView()
     {        
         return $this->controller->index();

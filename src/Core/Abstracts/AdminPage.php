@@ -31,7 +31,7 @@ abstract class AdminPage
             $page = $this->addMenuPage();
         }
         
-		//add_action('load-'.$page, [$this, 'handleAction']);
+		add_action('load-'.$page, [$this, 'handleAction']);
     }
 
     private function addMenuPage()
@@ -60,5 +60,6 @@ abstract class AdminPage
         );
     }
 
+    abstract public function handleAction();
     abstract public function handleView();
 }

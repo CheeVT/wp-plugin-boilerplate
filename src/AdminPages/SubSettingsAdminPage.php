@@ -21,6 +21,11 @@ class SubSettingsAdminPage extends AdminPage
         $this->controller = new SubMenuPageController($__dir__);
     }
 
+    public function handleAction()
+    {
+        
+    }
+
     public function handleView()
     {        
         return $this->controller->index();

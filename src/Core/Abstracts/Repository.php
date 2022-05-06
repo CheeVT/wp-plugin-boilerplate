@@ -29,4 +29,11 @@ abstract class Repository
 
 		return $this->wpdb->insert_id;
 	}
+
+	public function delete($id, $column = 'ID')
+	{
+		$this->wpdb->delete(
+			$this->table->getName(), [$column => $id]
+		);
+	}
 }

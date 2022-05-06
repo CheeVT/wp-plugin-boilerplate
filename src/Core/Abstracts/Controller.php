@@ -31,10 +31,42 @@ abstract class Controller
         return null;
 	}
 
+    public function getIds()
+	{
+		if (isset($_REQUEST['ids'])) {
+			return $_REQUEST['ids'];
+		}
+        return [];
+	}
+
+    public function delete($id)
+    {
+        $this->repository->delete($id);
+        $this->redirectToIndex();
+    }
+
+    public function bulkDelete($ids)
+    {
+        foreach($ids as $id) {
+            $this->repository->delete($id);
+        }
+        $this->redirectToIndex();
+    }
+
     public function renderView($view, $args = [])
 	{
 		extract($args);
 
 		include $this->__dir__ . '/views/' . $this->page . '/' . $view . '.php';
+	}
+
+    public function redirectToIndex($params = [])
+	{
+		$toUrl = add_query_arg(array_merge(
+			['page' => $this->page], $params
+		), 'admin.php');
+
+		wp_redirect($toUrl); 
+        exit;
 	}
 }
