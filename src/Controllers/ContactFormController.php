@@ -21,5 +21,14 @@ class ContactFormController extends Controller
         $this->renderView('index', compact('table'));
     }
 
+    public function show($submissionId)
+    {
+        $submission = $this->repository->find($submissionId);
+
+        if(! $submission) return;
+        
+        $this->renderView('show', compact('submission'));
+    }
+
     
 }

@@ -14,6 +14,13 @@ abstract class Repository
 
     abstract public function getTable() : DatabaseTable;
 
+	public function find($id, $column = 'ID')
+	{
+		return $this->wpdb->get_row(sprintf('
+			SELECT * FROM %s WHERE %s = "%s"
+		', $this->table->getName(), $column, $id));
+	}
+
     public function store($data)
 	{
 		$this->wpdb->insert(

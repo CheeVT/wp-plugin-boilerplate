@@ -23,6 +23,14 @@ abstract class Controller
         return null;
 	}
 
+    public function getId()
+	{
+		if (isset($_REQUEST['id'])) {
+			return $_REQUEST['id'];
+		}
+        return null;
+	}
+
     public function renderView($view, $args = [])
 	{
 		extract($args);

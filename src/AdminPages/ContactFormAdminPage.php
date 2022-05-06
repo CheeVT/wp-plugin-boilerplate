@@ -22,6 +22,9 @@ class ContactFormAdminPage extends AdminPage
 
     public function handleView()
     {
+        if($this->controller->getAction() == 'show') {
+            return $this->controller->show($this->controller->getId());
+        }
         return $this->controller->index();
     }
 }

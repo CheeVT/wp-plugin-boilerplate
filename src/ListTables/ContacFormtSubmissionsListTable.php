@@ -74,7 +74,7 @@ class ContacFormtSubmissionsListTable extends ListTable
 
     protected function column_cb($item)
 	{
-		return sprintf('<input type="checkbox" name="entity_ids[]" value="%s" />', $item['ID']);
+		return sprintf('<input type="checkbox" name="ids[]" value="%s" />', $item['ID']);
     }
 
     protected function column_name($item)
@@ -83,14 +83,14 @@ class ContacFormtSubmissionsListTable extends ListTable
 
 		$view_query_args = [
 			'page' => $page,
-			'action' => 'view',
-			'entity_id' => $item['ID'],
+			'action' => 'show',
+			'id' => $item['ID'],
 		];
 
 		$delete_query_args = [
 			'page' => $page,
 			'action' => 'delete',
-			'entity_id' => $item['ID'],
+			'id' => $item['ID'],
 		];
 
 		$actions = [
