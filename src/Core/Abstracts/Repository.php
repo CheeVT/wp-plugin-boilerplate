@@ -12,7 +12,7 @@ abstract class Repository
 		$this->table = $this->getTable();
 	}
 
-    abstract public function getTable();
+    abstract public function getTable() : DatabaseTable;
 
     public function store($data)
 	{
