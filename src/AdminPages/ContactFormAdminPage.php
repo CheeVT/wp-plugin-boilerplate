@@ -30,7 +30,7 @@ class ContactFormAdminPage extends AdminPage
         $ids = $this->controller->getIds();
         if($this->controller->getAction() == 'bulk-delete' && isset($ids)) {
             $this->controller->bulkDelete($ids);
-        }        
+        }
     } 
 
     public function handleView()
