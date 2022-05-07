@@ -7,7 +7,7 @@ const exampleAjax = () => {
 
     const ajaxData = {
         'action': 'example_func',
-        //'nonce': cheevt_object.nonce,
+        'nonce': cheevt_object.nonce,
         'data': data
     };
 

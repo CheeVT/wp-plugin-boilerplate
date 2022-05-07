@@ -8,7 +8,7 @@ const contactFormAjax = () => {
    
         const ajaxData = {
             'action': 'contact_form',
-            //'nonce': cheevt_object.nonce,
+            'nonce': cheevt_object.nonce,
             'data': getFormValues()
         };
     

@@ -17,6 +17,7 @@ class ExampleAjax extends Ajax
 
     public function defineAjax()
     {
+        $this->request->validate();
         //$request = new ExampleFormRequest();
         //print_r($this->request->getAll());
         //print_r($this->request->validate());

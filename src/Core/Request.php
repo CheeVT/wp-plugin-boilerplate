@@ -27,8 +27,21 @@ class Request
 		}
     }
 
+    public function validateNonce()
+    {
+        if(wp_verify_nonce($this->nonce)) return;
+
+        http_response_code(400);
+        header('Content-type: application/json');
+        print json_encode([
+            'message' => 'Nonce error'
+        ]);
+        exit;
+    }
+
     public function validate()
     {
+        $this->validateNonce();
         $this->rules();
         return $this->validator->validate($this->data['data']);
     }

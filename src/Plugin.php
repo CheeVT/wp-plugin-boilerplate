@@ -43,6 +43,7 @@ class Plugin
         wp_enqueue_script('cheevt-plugin-boilerplate-js', $jsFileUrl, ['jquery'], false, true);
         wp_localize_script('cheevt-plugin-boilerplate-js', 'cheevt_object', [
             'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce()
         ]);
     }
 

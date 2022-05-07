@@ -21,7 +21,7 @@ var contactFormAjax = function contactFormAjax() {
     sendBtn.innerText = 'Sending...';
     var ajaxData = {
       'action': 'contact_form',
-      //'nonce': cheevt_object.nonce,
+      'nonce': cheevt_object.nonce,
       'data': getFormValues()
     };
     jQuery.ajax({
@@ -93,7 +93,7 @@ var exampleAjax = function exampleAjax() {
   };
   var ajaxData = {
     'action': 'example_func',
-    //'nonce': cheevt_object.nonce,
+    'nonce': cheevt_object.nonce,
     'data': data
   };
   jQuery.ajax({
