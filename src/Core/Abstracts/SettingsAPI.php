@@ -83,8 +83,9 @@ abstract class SettingsAPI
     protected function renderInput($field)
     {
         $options = get_option($this->option_name);
+        $value = isset($options[$field['id']]) ? $options[$field['id']] : null;
 
-        echo "<input type='text' name='{$this->option_name}[{$field['id']}]' value='{$options[$field['id']]}' />";
+        echo "<input type='text' name='{$this->option_name}[{$field['id']}]' value='". ($value ? $value : '') ."' />";
     }
 
     protected function renderSelect($field)
