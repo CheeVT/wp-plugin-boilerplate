@@ -1,5 +1,5 @@
 <div class="wrap">
-	<h1 class="wp-heading-inline">CheeVT Settings</h1>
+	<h1 class="wp-heading-inline"><?php _e('CheeVT Settings', 'cheevt-plugin-boilerplate'); ?></h1>
 
     <form action="options.php" method="POST">
         <?php settings_errors(); ?>

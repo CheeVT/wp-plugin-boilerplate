@@ -1,5 +1,5 @@
 <div class="wrap">
-	<h1 class="wp-heading-inline">Settings Contact Form</h1>
+	<h1 class="wp-heading-inline"><?php _e('Settings Contact Form', 'cheevt-plugin-boilerplate'); ?></h1>
 
     <form action="options.php" method="POST">
     <?php settings_errors(); ?>

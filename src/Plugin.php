@@ -22,6 +22,7 @@ class Plugin
         
         register_activation_hook($this->__file__, [$this, 'activate']);
         add_action('plugins_loaded', [$this, 'initScripts']);
+        add_action('plugins_loaded', [$this, 'loadTranslation']);
         register_uninstall_hook($this->__file__, [static::class, 'uninstall']);
     }
 
@@ -55,8 +56,14 @@ class Plugin
         wp_enqueue_style('cheevt-plugin-boilerplate-css');
     }
 
+    public function loadTranslation()
+    {
+        load_plugin_textdomain('cheevt-plugin-boilerplate', false, dirname(plugin_basename($this->__file__)) . '/languages' ); 
+    }
+
     public static function uninstall()
     {
         DBSchema::drop([\CheeVT\Tables::class]);
-    }
+    } 
+    
 }

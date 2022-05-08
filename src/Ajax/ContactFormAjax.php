@@ -25,7 +25,7 @@ class ContactFormAjax extends Ajax
 
         if(! $request->isValid()) {
             wp_send_json_error([
-                'message' => 'Validation error',
+                'message' => __('Validation error', 'cheevt-plugin-boilerplate'),
                 'errors' => $request->getMessages()
             ], 400);
         }
@@ -42,14 +42,16 @@ class ContactFormAjax extends Ajax
             }
 
         wp_send_json_success([
-            'message' => 'Thank you '. $this->request->data['name'] .'! You have contacted us successfully. We will reply you ASAP :-)',
+            'message' => sprintf(
+                __('Thank you %s! You have contacted us successfully. We will reply you ASAP :-)', 'cheevt-plugin-boilerplate'), 
+                $this->request->data['name']),
         ], 200);
     }
 
     protected function sendEmail($validatedData, $to)
     {
         $headers[] = 'Content-Type: text/html; charset=UTF-8';
-        $headers[] = 'From: Me Myself <me@example.net>';
+        $headers[] = sprintf('From: Me %s <%s>', $validatedData['name'], $validatedData['email']);
 
         wp_mail($to, $validatedData['subject'], $validatedData['message'], $headers);
     }

@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cheevt-plugin-boilerplate\n"
+"POT-Creation-Date: 2022-05-08 20:36+0200\n"
+"PO-Revision-Date: 2022-05-08 20:37+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: src\n"
+"X-Poedit-SearchPath-1: views\n"
+
+#: src/Ajax/ContactFormAjax.php:28
+msgid "Validation error"
+msgstr ""
+
+#: src/Ajax/ContactFormAjax.php:46
+#, php-format
+msgid "Thank you %s! You have contacted us successfully. We will reply you ASAP :-)"
+msgstr ""
+
+#: src/Ajax/ExampleAjax.php:25
+msgid "Example ajax function has successfully executed!"
+msgstr ""
+
+#: src/Core/Abstracts/Taxonomy.php:39
+msgid "Search items"
+msgstr ""
+
+#: src/Core/Abstracts/Taxonomy.php:42
+msgid "All items"
+msgstr ""
+
+#: src/Core/Abstracts/Taxonomy.php:45
+msgid "Parent item"
+msgstr ""
+
+#: src/Core/Abstracts/Taxonomy.php:48
+msgid "Parent item column"
+msgstr ""
+
+#: src/Core/Abstracts/Taxonomy.php:51
+msgid "Edit item"
+msgstr ""
+
+#: src/Core/Abstracts/Taxonomy.php:54
+msgid "Update item"
+msgstr ""
+
+#: src/Core/Abstracts/Taxonomy.php:57
+msgid "Add new item"
+msgstr ""
+
+#: src/Core/Abstracts/Taxonomy.php:60
+msgid "New item name"
+msgstr ""
+
+#: src/Core/Abstracts/Taxonomy.php:63
+msgid "Menu name"
+msgstr ""
+
+#: src/ListTables/ContacFormtSubmissionsListTable.php:15
+msgid "Submission"
+msgstr ""
+
+#: src/ListTables/ContacFormtSubmissionsListTable.php:16
+msgid "Submissions"
+msgstr ""
+
+#: src/ListTables/ContacFormtSubmissionsListTable.php:29
+#: views/contact_form_submissions/show.php:13
+#: views/shortcodes/contact-form.php:6
+msgid "Name"
+msgstr ""
+
+#: src/ListTables/ContacFormtSubmissionsListTable.php:30
+#: views/contact_form_submissions/show.php:14
+#: views/shortcodes/contact-form.php:10
+msgid "Email"
+msgstr ""
+
+#: src/ListTables/ContacFormtSubmissionsListTable.php:31
+#: views/contact_form_submissions/show.php:15
+#: views/shortcodes/contact-form.php:14
+msgid "Subject"
+msgstr ""
+
+#: src/ListTables/ContacFormtSubmissionsListTable.php:32
+msgid "Submitted at"
+msgstr ""
+
+#: src/ListTables/ContacFormtSubmissionsListTable.php:99
+msgid "View"
+msgstr ""
+
+#: src/ListTables/ContacFormtSubmissionsListTable.php:103
+msgid "Delete"
+msgstr ""
+
+#: views/cheevt_settings/index.php:2
+msgid "CheeVT Settings"
+msgstr ""
+
+#: views/cheevt_subsettings/index.php:2
+msgid "CheeVT SubSettings"
+msgstr ""
+
+#: views/contact_form_settings/index.php:2
+msgid "Settings Contact Form"
+msgstr ""
+
+#: views/contact_form_submissions/index.php:2
+msgid "Contact form submissions"
+msgstr ""
+
+#: views/contact_form_submissions/index.php:8
+msgid "Search Submissions"
+msgstr ""
+
+#: views/contact_form_submissions/show.php:4
+#, php-format
+msgid "Contact form submission #%d"
+msgstr ""
+
+#: views/contact_form_submissions/show.php:16
+#: views/shortcodes/contact-form.php:18
+msgid "Message"
+msgstr ""
+
+#: views/shortcodes/contact-form.php:2
+msgid "Contact form"
+msgstr ""
+
+#: views/shortcodes/contact-form.php:22
+msgid "Send"
+msgstr ""

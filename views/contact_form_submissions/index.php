@@ -1,11 +1,11 @@
 <div class="wrap">
-	<h1 class="wp-heading-inline">Contact form submissions</h1>
+	<h1 class="wp-heading-inline"><?php _e('Contact form submissions', 'cheevt-plugin-boilerplate'); ?></h1>
 
 	<div id="post-body" class="metabox-holder">
 		<div id="post-body-content">
 			<div class="meta-box-sortables ui-sortable">
 				<form class="search-form" method="get">
-					<?php $table->search_box( __( 'Search Submissions' ), 'submission' ); ?>
+					<?php $table->search_box(__('Search Submissions', 'cheevt-plugin-boilerplate'), 'submission'); ?>
 					<input type="hidden" name="page" value="<?php echo $_REQUEST['page']; ?>" />
 					<input type="hidden" name="action" value="search" />
 				</form>

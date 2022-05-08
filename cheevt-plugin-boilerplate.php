@@ -3,6 +3,8 @@
 /**
 Plugin Name: CheeVT Plugin Boilerplate
 Description: Wordpress plugin boilerplate ready for development
+Text Domain: cheevt-plugin-boilerplate
+Domain Path: /languages
 Author: CheeVT
 Version: 1.0.0
 Author URI: https://github.com/CheeVT

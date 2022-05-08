@@ -22,7 +22,7 @@ class ExampleAjax extends Ajax
         //print_r($this->request->getAll());
         //print_r($this->request->validate());
         wp_send_json_success([
-            'message' => 'Example ajax function has successfully executed!',
+            'message' => __('Example ajax function has successfully executed!', 'cheevt-plugin-boilerplate'),
         ], 200);
     }
 }

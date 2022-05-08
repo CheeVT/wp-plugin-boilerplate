@@ -12,8 +12,8 @@ class ContacFormtSubmissionsListTable extends ListTable
     public function __construct(Repository $repository)
     {
         parent::__construct([
-			'singular' => 'Submission', // Singular name of the listed records.
-			'plural' => 'Submissions',  // Plural name of the listed records.
+			'singular' => __('Submission', 'cheevt-plugin-boilerplate'), // Singular name of the listed records.
+			'plural' => __('Submissions', 'cheevt-plugin-boilerplate'),  // Plural name of the listed records.
 			'ajax' => false,            // Does this table support ajax?
 		]);
 
@@ -26,10 +26,10 @@ class ContacFormtSubmissionsListTable extends ListTable
 	{
 		$columns = [
 			'cb' => '<input type="checkbox" />', // Render a checkbox instead of text.
-			'name' => _x( 'Name', 'Column label', 'wp-list-table-example'),
-			'email' => _x('Email', 'Column label', 'wp-list-table-example'),
-			'subject' => _x('Subject', 'Column label', 'wp-list-table-example'),
-			'created_at' => _x('Submitted at', 'Column label', 'wp-list-table-example'),
+			'name' => __('Name', 'cheevt-plugin-boilerplate'),
+			'email' => __('Email', 'cheevt-plugin-boilerplate'),
+			'subject' => __('Subject', 'cheevt-plugin-boilerplate'),
+			'created_at' => __('Submitted at', 'cheevt-plugin-boilerplate'),
 		];
 
 		return $columns;
@@ -95,10 +95,12 @@ class ContacFormtSubmissionsListTable extends ListTable
 
 		$actions = [
 			'view' => sprintf('<a href="%1$s">%2$s</a>',
-				add_query_arg($view_query_args, 'admin.php'), 'View'
+				add_query_arg($view_query_args, 'admin.php'),
+				__('View', 'cheevt-plugin-boilerplate')
 			),
 			'delete' => sprintf('<a href="%1$s">%2$s</a>',
-				add_query_arg($delete_query_args, 'admin.php'), 'Delete'
+				add_query_arg($delete_query_args, 'admin.php'), 
+				__('Delete', 'cheevt-plugin-boilerplate')
 			)
 		];
 
