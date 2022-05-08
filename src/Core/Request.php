@@ -19,10 +19,10 @@ class Request
             
             if(is_array($value)) {
                 foreach($value as $k => $v) {
-                    $this->data[$key][$k] = trim($v);
+                    $this->data[$key][$k] = sanitize_text_field($v);
                 }
             } else {
-                $this->data[$key] = trim($value);
+                $this->data[$key] = sanitize_text_field($value);
             }
 		}
     }

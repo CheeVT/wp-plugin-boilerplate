@@ -15,10 +15,14 @@ abstract class Repository
     abstract public function getTable() : DatabaseTable;
 
 	public function find($id, $column = 'ID')
-	{
-		return $this->wpdb->get_row(sprintf('
-			SELECT * FROM %s WHERE %s = "%s"
-		', $this->table->getName(), $column, $id));
+	{		
+		return array_map(function($colum) {
+				return esc_html($colum);
+			}, esc_sql($this->wpdb->get_row(sprintf('
+				SELECT * FROM %s WHERE %s = "%s"',
+				$this->table->getName(), $column, $id),
+				ARRAY_A))
+		);
 	}
 
     public function store($data)

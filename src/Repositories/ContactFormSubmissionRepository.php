@@ -36,7 +36,7 @@ class ContactFormSubmissionRepository extends Repository
 		$query .= sprintf(' ORDER BY %s %s ', $orderby, $direction);
 		$query .= sprintf(' LIMIT %s OFFSET %s ', $limit, ($page * $limit) - $limit);
 
-		return $this->wpdb->get_results($query, ARRAY_A);
+		return esc_sql($this->wpdb->get_results($query, ARRAY_A));
 	}
 
 	public function getSearchListTableItems($searchTerm, $limit, $page, $orderby = 'ID', $direction = 'DESC')
@@ -51,6 +51,6 @@ class ContactFormSubmissionRepository extends Repository
 		$query .= sprintf(' ORDER BY %s %s ', $orderby, $direction);
 		$query .= sprintf(' LIMIT %s OFFSET %s ', $limit, ($page * $limit) - $limit);
 
-		return $this->wpdb->get_results($query, ARRAY_A);
+		return esc_sql($this->wpdb->get_results($query, ARRAY_A));
 	}
 }
