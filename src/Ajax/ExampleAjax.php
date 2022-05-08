@@ -21,11 +21,8 @@ class ExampleAjax extends Ajax
         //$request = new ExampleFormRequest();
         //print_r($this->request->getAll());
         //print_r($this->request->validate());
-        header('Content-type: application/json');
-        print json_encode([
+        wp_send_json_success([
             'message' => 'Example ajax function has successfully executed!',
-        ]);
-
-        exit;
+        ], 200);
     }
 }

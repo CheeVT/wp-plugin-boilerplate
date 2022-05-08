@@ -23,21 +23,31 @@ class ContactFormAjax extends Ajax
         $validatedData = $request->getValues();
 
         if(! $request->isValid()) {
-            http_response_code(400);
-            header('Content-type: application/json');
-            print json_encode([
+            wp_send_json_error([
                 'message' => 'Validation error',
                 'errors' => $request->getMessages()
-            ]);
-            exit;
+            ], 400);
         }
-        $this->repository->store($request->getValues());
+        
         //print_r($this->request->getAll());
-        header('Content-type: application/json');
-        print json_encode([
-            'message' => 'Thank you '. $this->request->data['name'] .'! You have contacted us successfully. We will reply you ASAP :-)',
-        ]);
 
-        exit;
+        $this->storeToDb($validatedData);
+        $this->sendEmail($validatedData);
+
+        wp_send_json_success([
+            'message' => 'Thank you '. $this->request->data['name'] .'! You have contacted us successfully. We will reply you ASAP :-)',
+        ], 200);
+    }
+
+    protected function sendEmail($validatedData)
+    {
+        $headers[] = 'Content-Type: text/html; charset=UTF-8';
+        $headers[] = 'From: Me Myself <me@example.net>';
+
+        wp_mail('admin@gmail.com', $validatedData['subject'], $validatedData['message'], $headers);
+    }
+
+    protected function storeToDb($validatedData) {
+        $this->repository->store($validatedData);
     }
 }

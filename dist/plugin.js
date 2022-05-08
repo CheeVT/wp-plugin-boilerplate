@@ -37,7 +37,7 @@ var contactFormAjax = function contactFormAjax() {
           setTimeout(function () {
             msgDiv.classList.add('contact-form__msg--hidden');
           }, 3000);
-          msgDiv.innerHTML = "<p>".concat(response.message, "</p>");
+          msgDiv.innerHTML = "<p>".concat(response.data.message, "</p>");
           form.reset();
         }
       },
@@ -47,7 +47,7 @@ var contactFormAjax = function contactFormAjax() {
         setTimeout(function () {
           msgDiv.classList.add('contact-form__msg--hidden');
         }, 3000);
-        msgDiv.innerHTML = "<p>".concat(jqXHR.responseJSON.message, "</p>");
+        msgDiv.innerHTML = "<p>".concat(jqXHR.responseJSON.data.message, "</p>");
         console.log('error', jqXHR);
       }
     });

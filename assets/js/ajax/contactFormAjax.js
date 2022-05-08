@@ -26,7 +26,7 @@ const contactFormAjax = () => {
                     setTimeout(() => {
                         msgDiv.classList.add('contact-form__msg--hidden');
                     }, 3000);
-                    msgDiv.innerHTML = `<p>${response.message}</p>`;
+                    msgDiv.innerHTML = `<p>${response.data.message}</p>`;
                     form.reset();
                 }
     
@@ -38,7 +38,7 @@ const contactFormAjax = () => {
                     setTimeout(() => {
                         msgDiv.classList.add('contact-form__msg--hidden');
                     }, 3000);
-                    msgDiv.innerHTML = `<p>${jqXHR.responseJSON.message}</p>`;
+                    msgDiv.innerHTML = `<p>${jqXHR.responseJSON.data.message}</p>`;
                 console.log('error', jqXHR);
             }
         });
