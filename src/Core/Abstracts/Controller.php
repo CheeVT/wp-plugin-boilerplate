@@ -57,7 +57,7 @@ abstract class Controller
 	{
 		extract($args);
 
-		include $this->__dir__ . '/views/' . $this->page . '/' . $view . '.php';
+		include $this->__dir__ . '/views/' . $view . '.php';
 	}
 
     public function redirectToIndex($params = [])

@@ -15,7 +15,7 @@ class SettingsContactFormController extends Controller
 
     public function index()
     {
-        $this->renderView('index');
+        $this->renderView('contact_form/settings');
     }
 
     

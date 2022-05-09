@@ -13,7 +13,7 @@ class SubMenuPageController extends Controller
 
     public function index()
     {
-        $this->renderView('index');
+        $this->renderView('cheevt_settings/subpage');
     }
 
     

@@ -25,7 +25,7 @@ class ContactFormController extends Controller
             $table->setItems();
         }
         
-        $this->renderView('index', compact('table'));
+        $this->renderView('contact_form/index', compact('table'));
     }
 
     public function show($submissionId)
@@ -34,7 +34,7 @@ class ContactFormController extends Controller
 
         if(! $submission) return;
         
-        $this->renderView('show', compact('submission'));
+        $this->renderView('contact_form/show', compact('submission'));
     }
 
     
