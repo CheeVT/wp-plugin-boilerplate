@@ -2,6 +2,7 @@
 
 namespace CheeVT;
 
+use CheeVT\Core\Mail;
 use CheeVT\Core\Loader;
 use CheeVT\Core\DBSchema;
 
@@ -18,7 +19,8 @@ class Plugin
             \CheeVT\PostTypes::class,
             \CheeVT\Taxonomies::class,
             \CheeVT\AdminPages::class,
-        ], $__dir__);        
+        ], $__dir__);
+        new Mail($__dir__);
         
         register_activation_hook($this->__file__, [$this, 'activate']);
         add_action('plugins_loaded', [$this, 'initScripts']);

@@ -2,6 +2,7 @@
 
 namespace CheeVT\Ajax;
 
+use CheeVT\Core\Mail;
 use CheeVT\Core\Abstracts\Ajax;
 use CheeVT\Ajax\Requests\ContactFormRequest;
 use CheeVT\Repositories\ContactFormSubmissionRepository;
@@ -48,15 +49,13 @@ class ContactFormAjax extends Ajax
         ], 200);
     }
 
-    protected function sendEmail($validatedData, $to)
+    protected function sendEmail($data, $to)
     {
-        $headers[] = 'Content-Type: text/html; charset=UTF-8';
-        $headers[] = sprintf('From: Me %s <%s>', $validatedData['name'], $validatedData['email']);
-
-        wp_mail($to, $validatedData['subject'], $validatedData['message'], $headers);
+        //Mail::send($to, $data['subject'], $data['message']);
+        Mail::send($to, $data['subject'], $data, 'contact-form', $headers);
     }
 
-    protected function storeToDb($validatedData) {
-        $this->repository->store($validatedData);
+    protected function storeToDb($data) {
+        $this->repository->store($data);
     }
 }
