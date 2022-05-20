@@ -1,9 +1,11 @@
 const form = document.getElementById('contact-form');
-const sendBtn = form.querySelector('button');
-const msgDiv = form.querySelector('.contact-form__msg');
 
 const contactFormAjax = () => {
-    sendBtn.addEventListener('click', () => {        
+    if(! form) return;
+    const sendBtn = form.querySelector('button');
+    const msgDiv = form.querySelector('.contact-form__msg');
+    
+    sendBtn.addEventListener('click', () => {
         sendBtn.innerText = 'Sending...';
    
         const ajaxData = {

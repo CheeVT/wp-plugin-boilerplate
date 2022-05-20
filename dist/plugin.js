@@ -13,10 +13,14 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) { return; } if (typeof
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) { len = arr.length; } for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 var form = document.getElementById('contact-form');
-var sendBtn = form.querySelector('button');
-var msgDiv = form.querySelector('.contact-form__msg');
 
 var contactFormAjax = function contactFormAjax() {
+  if (!form) {
+    return;
+  }
+
+  var sendBtn = form.querySelector('button');
+  var msgDiv = form.querySelector('.contact-form__msg');
   sendBtn.addEventListener('click', function () {
     sendBtn.innerText = 'Sending...';
     var ajaxData = {
