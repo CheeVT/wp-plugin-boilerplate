@@ -46,6 +46,19 @@ class Request
         return $this->validator->validate($this->data['data']);
     }
 
+    public function validateRestAPI()
+    {
+        $this->rules();
+        return $this->validator->validate($this->data);
+    }
+
+    public function apiBody($data)
+    {
+        $this->data = json_decode($data, true);
+
+        return $this;
+    }
+
     public function __get($field)
     {
         if(isset($this->data[$field])) {
