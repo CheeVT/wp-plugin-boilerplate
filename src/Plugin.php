@@ -15,6 +15,7 @@ class Plugin
 
         Loader::init([
             \CheeVT\Ajax::class,
+            \CheeVT\API::class,
             \CheeVT\Shortcodes::class,
             \CheeVT\PostTypes::class,
             \CheeVT\Taxonomies::class,
